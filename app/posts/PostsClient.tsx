@@ -12,6 +12,7 @@ export type Post = {
   platforms: string;
   caption: string;
   notes: string;
+  referenceImage?: string;
 };
 
 const PLATFORM_CHIPS = ["All", "TikTok", "Instagram", "YouTube", "Facebook", "LINE"];
@@ -177,6 +178,25 @@ export default function PostsClient({ posts }: { posts: Post[] }) {
                 <p className="mt-1 text-xs text-ink/60 dark:text-ink-dark/60">
                   {p.format} · {p.platforms}
                 </p>
+                {p.referenceImage && (
+                  <a
+                    href={p.referenceImage}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 block overflow-hidden rounded-xl border border-line dark:border-line-dark"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={p.referenceImage}
+                      alt={`Shoot reference for Day ${p.day}: ${p.pillar}`}
+                      className="aspect-[27/40] w-full object-cover object-top"
+                      loading="lazy"
+                    />
+                    <span className="block bg-line/60 px-3 py-1.5 text-center text-[11px] font-medium uppercase tracking-wide text-ink/60 dark:bg-line-dark/60 dark:text-ink-dark/60">
+                      Shoot reference · tap to view full size
+                    </span>
+                  </a>
+                )}
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/90 dark:text-ink-dark/90">
                   {highlight(p.caption, query)}
                 </p>
