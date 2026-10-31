@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Libre Franklin", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f7f3ec;
+  color: #2a2420;
+}
+
+html.dark body {
+  background-color: #171410;
+  color: #ece3d6;
+}

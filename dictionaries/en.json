@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "Teddy",
+    "description": "Teddy's real days, real wins, and real challenges — building independence, one honest story at a time."
+  },
+  "nav": { "about": "About", "pillars": "What I share", "follow": "Follow", "project": "The project" },
+  "hero": {
+    "eyebrow": "Hi, I'm",
+    "name": "Teddy",
+    "tagline": "Building independence, one honest day at a time.",
+    "sub": "I'm a high-functioning kid sharing my real routines, real tools, and real progress — not for sympathy, just so other families can see how it actually works.",
+    "cta": "Follow along"
+  },
+  "about": {
+    "eyebrow": "Why I'm sharing this",
+    "title": "The short version",
+    "body1": "I'm working on a 6-month independence project with my school — three real skills, small steps, honest check-ins. This site, and the videos that go with it, are the record of that.",
+    "body2": "I'm not here to be inspiring. I'm here to show the specific things that actually help — the tools, the systems, the small wins — so families who are figuring out something similar have one less thing to guess at."
+  },
+  "pillars": {
+    "eyebrow": "What I share",
+    "title": "Five kinds of stories",
+    "items": [
+      { "title": "Daily life", "body": "A real look at an ordinary day — routines, checklists, what actually works." },
+      { "title": "Light humor", "body": "The challenges I run into, told with a laugh, never at my own expense." },
+      { "title": "Learning journey", "body": "How I'm working through my 6-month independence project, step by step." },
+      { "title": "Tools I trust", "body": "Honest reviews of the apps and tools that help me do more on my own." },
+      { "title": "Staying safe", "body": "How I use an AI assistant to find my way and reach my parents if I need to." }
+    ]
+  },
+  "follow": {
+    "eyebrow": "Follow",
+    "title": "Come along for the month",
+    "body": "New stories a few times a week. Come say hi.",
+    "platforms": { "tiktok": "TikTok", "instagram": "Instagram", "youtube": "YouTube", "facebook": "Facebook", "line": "LINE" }
+  },
+  "footer": {
+    "note": "A family project, shared with care.",
+    "language": "Language"
+  }
+}
