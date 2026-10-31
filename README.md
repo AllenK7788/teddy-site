@@ -47,6 +47,39 @@ depending on your browser's language setting).
 3. Once it's live, add a custom domain under the Vercel project's Domains
    settings if you have one.
 
+## Teddy's Progress dashboard (`/dashboard`)
+
+A private, Google-sign-in-gated page backed by a Neon Postgres database —
+replaces the earlier Claude-artifact version. Three skill-tracker cards plus
+a dated log that anyone signed in can add notes to.
+
+### One-time setup
+
+1. **Database**: open your Neon project in the [Neon console](https://console.neon.tech) →
+   **SQL Editor**, paste the contents of `db/schema.sql`, and run it. This
+   creates the `skills` and `updates` tables and seeds the three skills plus
+   a kickoff log entry.
+2. **Google sign-in**: go to [Google Cloud Console → Credentials](https://console.cloud.google.com/apis/credentials),
+   create an **OAuth client ID** (type: Web application). Add this redirect URI:
+   - `http://localhost:3000/api/auth/callback/google` (for local testing)
+   - `https://<your-vercel-domain>/api/auth/callback/google` (once deployed — add this after your first deploy, when you know the domain)
+
+   Copy the generated **Client ID** and **Client Secret**.
+3. **Environment variables**: copy `.env.local.example` to `.env.local` and fill in:
+   - `DATABASE_URL` — already set for you (the Neon pooled connection string)
+   - `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` — from step 2
+   - `ALLOWED_EMAILS` — comma-separated list of Google accounts allowed in (you + the teacher)
+   - `NEXTAUTH_SECRET` — already generated for you
+   - `NEXTAUTH_URL` — `http://localhost:3000` locally; update to your real domain in Vercel's env settings once deployed
+4. **On Vercel**: add all of the above (except `NEXTAUTH_URL`, which you set to your production URL instead) under Project Settings → Environment Variables. Never commit `.env.local` — it's gitignored.
+
+### Day to day
+
+Anyone in `ALLOWED_EMAILS` can sign in at `/dashboard` with Google and add a
+log entry. Moving a skill to "in progress" or "done" also nudges that
+skill's official progress bar forward (never backward) — the skill
+descriptions themselves can only be edited directly in the database.
+
 ## Editing content later
 
 - To change any text: edit the matching key in `dictionaries/en.json` /
