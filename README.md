@@ -80,6 +80,19 @@ log entry. Moving a skill to "in progress" or "done" also nudges that
 skill's official progress bar forward (never backward) — the skill
 descriptions themselves can only be edited directly in the database.
 
+## Content calendar browser (`/posts`)
+
+A single page showing all 30 days of the content calendar as cards — search
+by topic/caption/day, filter by Core vs. Repurpose or by platform, and copy
+any caption to the clipboard with one click. Not indexed by search engines
+(it's a working tool, not a public page).
+
+- Data lives in `data/posts.json` (30 entries: day, date, weekday, type,
+  pillar, format, platforms, caption, notes). Edit this file to update a
+  caption or add notes — the page reads straight from it, no rebuild logic
+  needed beyond redeploying.
+- UI lives in `app/posts/PostsClient.tsx`.
+
 ## Editing content later
 
 - To change any text: edit the matching key in `dictionaries/en.json` /

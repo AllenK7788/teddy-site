@@ -27,7 +27,7 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Exclude Next internals, API routes, the (unlocalized, auth-gated)
-  // dashboard, static files, and favicon from the locale redirect.
-  matcher: ["/((?!_next|api|dashboard|favicon.ico|.*\\..*).*)"],
+  // Exclude Next internals, API routes, the (unlocalized) dashboard and
+  // posts pages, static files, and favicon from the locale redirect.
+  matcher: ["/((?!_next|api|dashboard|posts|favicon.ico|.*\\..*).*)"],
 };
